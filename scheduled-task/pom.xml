@@ -49,6 +49,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- Quartz Core -->
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>

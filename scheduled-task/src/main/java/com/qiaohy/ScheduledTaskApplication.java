@@ -7,10 +7,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class QiaohyScheduledTaskApplication {
+public class ScheduledTaskApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(QiaohyScheduledTaskApplication.class, args);
+        SpringApplication.run(ScheduledTaskApplication.class, args);
     }
 
 }
