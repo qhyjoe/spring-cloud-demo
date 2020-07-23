@@ -1,0 +1,25 @@
+server:
+  port: 7910
+spring:
+  application:
+    name: eureka-client-movie
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+    metadata-map:
+      zone: ABC      # eureka可以理解的元数据
+      lilizhou: BBC  # 不会影响客户端行为
+    lease-renewal-interval-in-seconds: 5
+feign:
+  hystrix:
+    enabled: true
+logging:
+  level:
+    root: INFO
+    com.qiaohy: DEBUG

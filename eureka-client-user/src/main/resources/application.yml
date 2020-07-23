@@ -1,0 +1,33 @@
+server:
+  port: 7901
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+  application:
+    name: eureka-client-user
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://admin:123456@127.0.0.1:8761/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    metadata-map:
+      zone: ABC      # eureka可以理解的元数据
+    lease-renewal-interval-in-seconds: 5
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.qiaohy: DEBUG
