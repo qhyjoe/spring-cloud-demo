@@ -10,10 +10,10 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableEurekaClient
 @EnableFeignClients
 @EnableCircuitBreaker
-public class QiaohyEurekaClientMovieApplication {
+public class EurekaClientMovieApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(QiaohyEurekaClientMovieApplication.class, args);
+        SpringApplication.run(EurekaClientMovieApplication.class, args);
     }
 
 }
